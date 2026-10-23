@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dfi5cgav6u5p0"]
+
+[ext_resource type="Script" uid="uid://dx2mn2l6602d1" path="res://scripts/Boot.gd" id="1_elqb8"]
+[ext_resource type="Resource" uid="uid://s286tt5eqtbg" path="res://data/DefaultCombatConfig.tres" id="2_0bbpv"]
+[ext_resource type="Resource" uid="uid://bh6sscfcko8se" path="res://data/cards/AperturePalm.tres" id="2_rvslj"]
+
+[node name="Main" type="Node" unique_id=925537888]
+script = ExtResource("1_elqb8")
+config = ExtResource("2_0bbpv")
+test_card = ExtResource("2_rvslj")
