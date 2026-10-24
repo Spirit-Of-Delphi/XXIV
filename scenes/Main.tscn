@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dx2mn2l6602d1" path="res://scripts/Boot.gd" id="1_elqb8"]
 [ext_resource type="Resource" uid="uid://s286tt5eqtbg" path="res://data/DefaultCombatConfig.tres" id="2_0bbpv"]
-[ext_resource type="Resource" uid="uid://bh6sscfcko8se" path="res://data/cards/AperturePalm.tres" id="2_rvslj"]
+[ext_resource type="Resource" uid="uid://8ywmipfglhx" path="res://data/encounters/TestEncounter.tres" id="3_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://b3ensvdmfqyl1" path="res://scenes/CombatScreen.tscn" id="4_rarhs"]
 
-[node name="Main" type="Node" unique_id=925537888]
+[node name="Main" type="Node" unique_id=925537888 node_paths=PackedStringArray("combat_screen")]
 script = ExtResource("1_elqb8")
-build_version = null
 config = ExtResource("2_0bbpv")
-test_card = ExtResource("2_rvslj")
+initial_encounter_data = ExtResource("3_vcsgt")
+combat_screen = NodePath("CombatScreen")
+
+[node name="CombatScreen" parent="." unique_id=1132189157 instance=ExtResource("4_rarhs")]

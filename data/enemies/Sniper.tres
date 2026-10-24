@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://unsgnldte4dw"]
+
+[ext_resource type="Script" uid="uid://goxq0lofyo3o" path="res://scripts/data/EnemyData.gd" id="1_jig83"]
+[ext_resource type="Script" uid="uid://cne41vicepm55" path="res://scripts/data/EnemyTurnPattern.gd" id="2_44c67"]
+[ext_resource type="Script" uid="uid://c2f64og5t15h3" path="res://scripts/data/EnemyAttackData.gd" id="3_44c67"]
+
+[sub_resource type="Resource" id="Resource_nhlq1"]
+script = ExtResource("3_44c67")
+start_frame = 14
+end_frame = 22
+damage = 8
+is_beam = true
+metadata/_custom_type_script = "uid://c2f64og5t15h3"
+
+[sub_resource type="Resource" id="Resource_gb5a2"]
+script = ExtResource("2_44c67")
+preferred_range = 4
+attacks = Array[ExtResource("3_44c67")]([SubResource("Resource_nhlq1")])
+metadata/_custom_type_script = "uid://cne41vicepm55"
+
+[resource]
+script = ExtResource("1_jig83")
+id = "sniper"
+title = "Sniper"
+symbol = "S"
+max_hp = 12
+turn_patterns = Array[ExtResource("2_44c67")]([SubResource("Resource_gb5a2")])
+metadata/_custom_type_script = "uid://goxq0lofyo3o"

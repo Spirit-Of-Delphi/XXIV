@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://lbqdu5oep6b8"]
+
+[ext_resource type="Script" uid="uid://bjdqxhv8o3lxd" path="res://scripts/data/CardData.gd" id="1_gcidl"]
+
+[resource]
+script = ExtResource("1_gcidl")
+id = "kick"
+display_name = "Kick"
+description = "7 dmg & Push 2 tiles on f3"
+family = 1
+frame_cost = 5
+hit_frames = Array[int]([3])
+base_damage = 7
+knockback_distance = 2
+metadata/_custom_type_script = "uid://bjdqxhv8o3lxd"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cysqpqfvwh7k3"]
+
+[ext_resource type="Script" uid="uid://goxq0lofyo3o" path="res://scripts/data/EnemyData.gd" id="1_v64mp"]
+[ext_resource type="Script" uid="uid://cne41vicepm55" path="res://scripts/data/EnemyTurnPattern.gd" id="2_vh7uk"]
+[ext_resource type="Script" uid="uid://c2f64og5t15h3" path="res://scripts/data/EnemyAttackData.gd" id="3_vh7uk"]
+
+[sub_resource type="Resource" id="Resource_gnu7s"]
+script = ExtResource("3_vh7uk")
+metadata/_custom_type_script = "uid://c2f64og5t15h3"
+
+[sub_resource type="Resource" id="Resource_phncb"]
+script = ExtResource("2_vh7uk")
+attacks = Array[ExtResource("3_vh7uk")]([SubResource("Resource_gnu7s")])
+metadata/_custom_type_script = "uid://cne41vicepm55"
+
+[resource]
+script = ExtResource("1_v64mp")
+id = "hound"
+title = "Hound"
+symbol = "H"
+max_hp = 18
+turn_patterns = Array[ExtResource("2_vh7uk")]([SubResource("Resource_phncb")])
+metadata/_custom_type_script = "uid://goxq0lofyo3o"

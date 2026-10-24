@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://xaneil5g35jk"]
+
+[ext_resource type="Script" uid="uid://bjdqxhv8o3lxd" path="res://scripts/data/CardData.gd" id="1_2tily"]
+
+[resource]
+script = ExtResource("1_2tily")
+id = "pivot"
+display_name = "Pivot"
+description = "Safe 180° turn. Retain"
+frame_cost = 2
+retains_in_hand = true
+allows_180_turn = true
+metadata/_custom_type_script = "uid://bjdqxhv8o3lxd"

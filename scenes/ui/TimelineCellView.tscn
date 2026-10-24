@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://3tn3554kkehk"]
+
+[ext_resource type="Script" uid="uid://c8y38hk5sss8i" path="res://scripts/view/ui/TimelineCellView.gd" id="1_1bq8f"]
+
+[node name="TimelineCellView" type="Control" unique_id=1189448510 node_paths=PackedStringArray("background_rect", "start_edge_bar", "playhead_overlay", "cell_label")]
+custom_minimum_size = Vector2(22, 32)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_1bq8f")
+background_rect = NodePath("BackgroundRect")
+start_edge_bar = NodePath("StartEdgeBar")
+playhead_overlay = NodePath("PlayheadOverlay")
+cell_label = NodePath("CellLabel")
+
+[node name="BackgroundRect" type="ColorRect" parent="." unique_id=777952377]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StartEdgeBar" type="ColorRect" parent="." unique_id=1001363403]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 3.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PlayheadOverlay" type="ColorRect" parent="." unique_id=1369798252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.24000001)
+
+[node name="CellLabel" type="Label" parent="." unique_id=825207467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+vertical_alignment = 1

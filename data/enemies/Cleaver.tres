@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://b86fakkp15o8d"]
+
+[ext_resource type="Script" uid="uid://goxq0lofyo3o" path="res://scripts/data/EnemyData.gd" id="1_2hpvm"]
+[ext_resource type="Script" uid="uid://cne41vicepm55" path="res://scripts/data/EnemyTurnPattern.gd" id="2_j2lsp"]
+[ext_resource type="Script" uid="uid://c2f64og5t15h3" path="res://scripts/data/EnemyAttackData.gd" id="3_j2lsp"]
+
+[sub_resource type="Resource" id="Resource_mpu83"]
+script = ExtResource("3_j2lsp")
+start_frame = 10
+end_frame = 17
+damage = 7
+local_offsets = Array[Vector2i]([Vector2i(0, -1), Vector2i(-1, -1), Vector2i(1, -1)])
+metadata/_custom_type_script = "uid://c2f64og5t15h3"
+
+[sub_resource type="Resource" id="Resource_s4myj"]
+script = ExtResource("2_j2lsp")
+attacks = Array[ExtResource("3_j2lsp")]([SubResource("Resource_mpu83")])
+metadata/_custom_type_script = "uid://cne41vicepm55"
+
+[resource]
+script = ExtResource("1_2hpvm")
+id = "cleaver"
+title = "Cleaver"
+symbol = "C"
+turn_patterns = Array[ExtResource("2_j2lsp")]([SubResource("Resource_s4myj")])
+metadata/_custom_type_script = "uid://goxq0lofyo3o"

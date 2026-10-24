@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://btfx3v2c5oujs"]
+
+[ext_resource type="Script" uid="uid://bjdqxhv8o3lxd" path="res://scripts/data/CardData.gd" id="1_cyb20"]
+
+[resource]
+script = ExtResource("1_cyb20")
+id = "dash"
+display_name = "Dash"
+description = "Step 2 tiles (f0, f3)"
+frame_cost = 6
+step_frames = Array[int]([0, 3])
+tier_3_step_frames = Array[int]([0, 1])
+metadata/_custom_type_script = "uid://bjdqxhv8o3lxd"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c2i4fvgdb15cl"]
+
+[ext_resource type="Script" uid="uid://bjdqxhv8o3lxd" path="res://scripts/data/CardData.gd" id="1_n6nal"]
+
+[resource]
+script = ExtResource("1_n6nal")
+id = "sprint"
+display_name = "Sprint"
+description = "Sprint 3 tiles (f0, f3, f6)"
+frame_cost = 8
+step_frames = Array[int]([0, 3, 6])
+tier_3_step_frames = Array[int]([0, 2, 4])
+metadata/_custom_type_script = "uid://bjdqxhv8o3lxd"

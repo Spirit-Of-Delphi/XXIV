@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dtpphjrffawxg"]
+
+[ext_resource type="Script" uid="uid://bjdqxhv8o3lxd" path="res://scripts/data/CardData.gd" id="1_jqbmx"]
+
+[resource]
+script = ExtResource("1_jqbmx")
+id = "swap"
+display_name = "Swap"
+description = "Swap position with Frozen enemy"
+family = 2
+frame_cost = 2
+edit_frames = Array[int]([0])
+swaps_with_frozen = true
+metadata/_custom_type_script = "uid://bjdqxhv8o3lxd"

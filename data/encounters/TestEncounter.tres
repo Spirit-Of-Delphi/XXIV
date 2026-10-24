@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="EncounterData" format=3 uid="uid://8ywmipfglhx"]
+
+[ext_resource type="Script" uid="uid://bxqv6ygjhrdtj" path="res://scripts/data/EnemySpawnData.gd" id="1_cjam4"]
+[ext_resource type="Script" uid="uid://cyxcgp6ha0s68" path="res://scripts/data/EncounterData.gd" id="2_5k5tn"]
+[ext_resource type="Resource" uid="uid://cysqpqfvwh7k3" path="res://data/enemies/Hound.tres" id="2_rl5d7"]
+[ext_resource type="Resource" uid="uid://b86fakkp15o8d" path="res://data/enemies/Cleaver.tres" id="3_dk2w4"]
+[ext_resource type="Script" uid="uid://bjdqxhv8o3lxd" path="res://scripts/data/CardData.gd" id="3_rl5d7"]
+[ext_resource type="Resource" uid="uid://unsgnldte4dw" path="res://data/enemies/Sniper.tres" id="4_pj3cp"]
+[ext_resource type="Resource" uid="uid://c8b6w4py8is10" path="res://data/cards/motion/QuickStep.tres" id="7_he2do"]
+[ext_resource type="Resource" uid="uid://btfx3v2c5oujs" path="res://data/cards/motion/Dash.tres" id="8_cpfr6"]
+[ext_resource type="Resource" uid="uid://c2i4fvgdb15cl" path="res://data/cards/motion/Sprint.tres" id="9_28n1e"]
+[ext_resource type="Resource" uid="uid://xaneil5g35jk" path="res://data/cards/motion/Pivot.tres" id="10_7rd5q"]
+[ext_resource type="Resource" uid="uid://b6cgcgdceakwx" path="res://data/cards/action/Jab.tres" id="11_2lg3g"]
+[ext_resource type="Resource" uid="uid://bh6sscfcko8se" path="res://data/cards/action/AperturePalm.tres" id="12_gu2dl"]
+[ext_resource type="Resource" uid="uid://lbqdu5oep6b8" path="res://data/cards/action/Kick.tres" id="13_hx2id"]
+[ext_resource type="Resource" uid="uid://cmlw65d5matvy" path="res://data/cards/action/Guard.tres" id="14_hybpa"]
+[ext_resource type="Resource" uid="uid://2wtre0ravof8" path="res://data/cards/action/TwinStrike.tres" id="15_k45qo"]
+[ext_resource type="Resource" uid="uid://0hapl6cwdomm" path="res://data/cards/edit/Develop.tres" id="16_7x6m2"]
+[ext_resource type="Resource" uid="uid://cn0oo156yll0s" path="res://data/cards/edit/DutchAngle.tres" id="17_oe7d1"]
+[ext_resource type="Resource" uid="uid://b326xiisn2msy" path="res://data/cards/edit/HoldFrame.tres" id="18_m3jul"]
+[ext_resource type="Resource" uid="uid://cvd1frtijtml7" path="res://data/cards/edit/NegativeExposure.tres" id="19_au2mu"]
+[ext_resource type="Resource" uid="uid://dk8o03dr4wdjp" path="res://data/cards/edit/Rewind.tres" id="20_x0eql"]
+[ext_resource type="Resource" uid="uid://d1vt83pvco8wh" path="res://data/cards/edit/Slip.tres" id="21_vku45"]
+[ext_resource type="Resource" uid="uid://dtpphjrffawxg" path="res://data/cards/edit/Swap.tres" id="22_t58p8"]
+[ext_resource type="Resource" uid="uid://cry1wxj7rii4j" path="res://data/cards/edit/Tag.tres" id="23_hc5qr"]
+
+[sub_resource type="Resource" id="Resource_q5wp5"]
+script = ExtResource("1_cjam4")
+enemy_data = ExtResource("2_rl5d7")
+grid_position = Vector2i(2, 5)
+metadata/_custom_type_script = "uid://bxqv6ygjhrdtj"
+
+[sub_resource type="Resource" id="Resource_mxxn7"]
+script = ExtResource("1_cjam4")
+enemy_data = ExtResource("3_dk2w4")
+grid_position = Vector2i(3, 0)
+metadata/_custom_type_script = "uid://bxqv6ygjhrdtj"
+
+[sub_resource type="Resource" id="Resource_gb5a2"]
+script = ExtResource("1_cjam4")
+enemy_data = ExtResource("4_pj3cp")
+grid_position = Vector2i(5, 5)
+metadata/_custom_type_script = "uid://bxqv6ygjhrdtj"
+
+[resource]
+script = ExtResource("2_5k5tn")
+walls = Array[Vector2i]([Vector2i(1, 2)])
+pits = Array[Vector2i]([Vector2i(4, 2)])
+starting_deck = Array[ExtResource("3_rl5d7")]([ExtResource("7_he2do"), ExtResource("8_cpfr6"), ExtResource("9_28n1e"), ExtResource("10_7rd5q"), ExtResource("11_2lg3g"), ExtResource("12_gu2dl"), ExtResource("13_hx2id"), ExtResource("14_hybpa"), ExtResource("15_k45qo"), ExtResource("16_7x6m2"), ExtResource("17_oe7d1"), ExtResource("18_m3jul"), ExtResource("19_au2mu"), ExtResource("20_x0eql"), ExtResource("21_vku45"), ExtResource("22_t58p8"), ExtResource("23_hc5qr")])
+enemy_spawns = Array[ExtResource("1_cjam4")]([SubResource("Resource_q5wp5"), SubResource("Resource_mxxn7"), SubResource("Resource_gb5a2")])
+metadata/_custom_type_script = "uid://cyxcgp6ha0s68"

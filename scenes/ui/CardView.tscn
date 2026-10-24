@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://damvoos2im7bl"]
+
+[ext_resource type="Script" uid="uid://cwou7ppdsbxce" path="res://scripts/view/ui/CardView.gd" id="1_0g8ut"]
+
+[node name="CardView" type="Control" unique_id=603975091 node_paths=PackedStringArray("selection_border", "card_background", "family_banner", "family_label", "cost_label", "name_label", "description_label")]
+custom_minimum_size = Vector2(168, 140)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0g8ut")
+selection_border = NodePath("SelectionBorder")
+card_background = NodePath("CardBackground")
+family_banner = NodePath("FamilyBanner")
+family_label = NodePath("MarginContainer/ContentVBox/HeaderRow/FamilyLabel")
+cost_label = NodePath("MarginContainer/ContentVBox/HeaderRow/CostLabel")
+name_label = NodePath("MarginContainer/ContentVBox/NameLabel")
+description_label = NodePath("MarginContainer/ContentVBox/DescriptionLabel")
+
+[node name="SelectionBorder" type="ColorRect" parent="." unique_id=160475861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CardBackground" type="ColorRect" parent="." unique_id=403991029]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FamilyBanner" type="ColorRect" parent="." unique_id=677373376]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 28.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=520701881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ContentVBox" type="VBoxContainer" parent="MarginContainer" unique_id=971336511]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HeaderRow" type="HBoxContainer" parent="MarginContainer/ContentVBox" unique_id=807496025]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="FamilyLabel" type="Label" parent="MarginContainer/ContentVBox/HeaderRow" unique_id=1644117049]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "MOTION"
+
+[node name="CostLabel" type="Label" parent="MarginContainer/ContentVBox/HeaderRow" unique_id=488261428]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "4f"
+horizontal_alignment = 2
+
+[node name="NameLabel" type="Label" parent="MarginContainer/ContentVBox" unique_id=1349745160]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Card Name"
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/ContentVBox" unique_id=1291504057]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 11
+text = "Description"
+autowrap_mode = 3

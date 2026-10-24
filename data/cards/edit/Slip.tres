@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://d1vt83pvco8wh"]
+
+[ext_resource type="Script" uid="uid://bjdqxhv8o3lxd" path="res://scripts/data/CardData.gd" id="1_dmrh0"]
+
+[resource]
+script = ExtResource("1_dmrh0")
+id = "slip"
+display_name = "Slip"
+description = "Shift enemy intents ±3f"
+family = 2
+frame_cost = 2
+edit_frames = Array[int]([0])
+slip_intent_frames = 3
+metadata/_custom_type_script = "uid://bjdqxhv8o3lxd"

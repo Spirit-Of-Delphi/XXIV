@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b6cgcgdceakwx"]
+
+[ext_resource type="Script" uid="uid://bjdqxhv8o3lxd" path="res://scripts/data/CardData.gd" id="1_761kn"]
+
+[resource]
+script = ExtResource("1_761kn")
+id = "jab"
+display_name = "Jab"
+description = "5 dmg strike on f1"
+family = 1
+frame_cost = 3
+hit_frames = Array[int]([1])
+base_damage = 5
+metadata/_custom_type_script = "uid://bjdqxhv8o3lxd"

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://qvqj3623b0mb"]
+
+[ext_resource type="Script" uid="uid://c3654gw351i61" path="res://scripts/view/arena/TileView.gd" id="1_xa56p"]
+
+[node name="TileView" type="Node2D" unique_id=1516717910 node_paths=PackedStringArray("selection_border", "floor_visual", "obstacle_visual", "telegraph_overlay", "telegraph_label")]
+script = ExtResource("1_xa56p")
+selection_border = NodePath("SelectionBorder")
+floor_visual = NodePath("FloorVisual")
+obstacle_visual = NodePath("ObstacleVisual")
+telegraph_overlay = NodePath("TelegraphOverlay")
+telegraph_label = NodePath("TelegraphLabel")
+
+[node name="SelectionBorder" type="ColorRect" parent="." unique_id=1688960136]
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+color = Color(1, 0.95281494, 0.5847179, 0.90000004)
+
+[node name="FloorVisual" type="ColorRect" parent="." unique_id=838452280]
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 33.0
+
+[node name="ObstacleVisual" type="ColorRect" parent="." unique_id=1133600659]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="TelegraphOverlay" type="ColorRect" parent="." unique_id=641270571]
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 33.0
+
+[node name="TelegraphLabel" type="Label" parent="." unique_id=833572027]
+offset_left = -31.0
+offset_top = -32.0
+offset_right = 31.0
+offset_bottom = -9.0
+text = "f10"
+horizontal_alignment = 2

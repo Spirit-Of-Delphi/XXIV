@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://faf27n7ahvrr"]
+
+[ext_resource type="Script" uid="uid://hqcw7su54rdi" path="res://scripts/view/ui/CombatHudView.gd" id="1_jhpne"]
+
+[node name="CombatHudView" type="Control" unique_id=976056322 node_paths=PackedStringArray("take_label", "vitals_label", "speed_tier_label", "momentum_label", "warning_label", "piles_label", "clear_button", "commit_button", "end_banner_panel", "end_title_label", "restart_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jhpne")
+take_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/TakeLabel")
+vitals_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/VitalsLabel")
+speed_tier_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/SpeedTierLabel")
+momentum_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/MomentumLabel")
+warning_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/WarningLabel")
+piles_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/PilesLabel")
+clear_button = NodePath("TopBarPanel/MarginContainer/TopBarRow/ClearButton")
+commit_button = NodePath("TopBarPanel/MarginContainer/TopBarRow/CommitButton")
+end_banner_panel = NodePath("EndBarPanel")
+end_title_label = NodePath("EndBarPanel/MarginContainer/EndVBox/EndTitleLabel")
+restart_button = NodePath("EndBarPanel/MarginContainer/EndVBox/RestartButton")
+
+[node name="TopBarPanel" type="PanelContainer" parent="." unique_id=809159690]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 12.0
+offset_right = -24.0
+offset_bottom = 60.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TopBarPanel" unique_id=1937967930]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 8
+
+[node name="TopBarRow" type="HBoxContainer" parent="TopBarPanel/MarginContainer" unique_id=1383848844]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="TakeLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=1305325765]
+layout_mode = 2
+
+[node name="VitalsLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=782390575]
+layout_mode = 2
+
+[node name="SpeedTierLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=1257074465]
+layout_mode = 2
+
+[node name="MomentumLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=1239793182]
+layout_mode = 2
+
+[node name="WarningLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=374085354]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+
+[node name="PilesLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=410216352]
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=908963787]
+layout_mode = 2
+text = "CLEAR"
+
+[node name="CommitButton" type="Button" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=2138021510]
+layout_mode = 2
+text = "COMMIT"
+
+[node name="EndBarPanel" type="PanelContainer" parent="." unique_id=753287748]
+custom_minimum_size = Vector2(460, 140)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="EndBarPanel" unique_id=414381470]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="EndVBox" type="VBoxContainer" parent="EndBarPanel/MarginContainer" unique_id=2042054995]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="EndTitleLabel" type="Label" parent="EndBarPanel/MarginContainer/EndVBox" unique_id=1755095665]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="EndBarPanel/MarginContainer/EndVBox" unique_id=2122664053]
+layout_mode = 2
+text = "NEW TAKE"

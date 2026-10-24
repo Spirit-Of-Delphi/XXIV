@@ -5,6 +5,10 @@ extends Node
 @export var config: CombatConfig
 @export var run_headless_tests_on_boot: bool = true
 
+@export_group("Startup Encounter")
+@export var initial_encounter_data: EncounterData
+@export var combat_screen: CombatScreen
+
 var _is_initialized: bool = false
 
 
@@ -32,3 +36,6 @@ func _initialize_game() -> void:
 
 	if run_headless_tests_on_boot:
 		HeadlessTestRunner.run_all(config)
+
+	if combat_screen != null and initial_encounter_data != null:
+		combat_screen.start_encounter(initial_encounter_data, config)
