@@ -6,5 +6,6 @@
 
 [node name="Main" type="Node" unique_id=925537888]
 script = ExtResource("1_elqb8")
+build_version = null
 config = ExtResource("2_0bbpv")
 test_card = ExtResource("2_rvslj")

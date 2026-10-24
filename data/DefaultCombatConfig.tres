@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CombatConfig" format=3 uid="uid://s286tt5eqtbg"]
 
-[ext_resource type="Script" uid="uid://dvs2u8rafiloc" path="res://scripts/CombatConfig.gd" id="1_etnd2"]
+[ext_resource type="Script" uid="uid://dvs2u8rafiloc" path="res://scripts/data/CombatConfig.gd" id="1_etnd2"]
 
 [resource]
 script = ExtResource("1_etnd2")

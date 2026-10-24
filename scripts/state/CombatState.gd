@@ -27,14 +27,21 @@ var enemies: Array[EnemyState]:
 
 # --- Encapsulated API ---
 
-func add_enemy(enemy: EnemyState) -> void:
-	if enemy != null and not _enemies.has(enemy):
-		_enemies.append(enemy)
+func add_enemy(p_enemy: EnemyState) -> void:
+	if p_enemy != null and not _enemies.has(p_enemy):
+		_enemies.append(p_enemy)
 
 
-func get_enemy_at(pos: Vector2i) -> EnemyState:
+func get_enemy_at(p_pos: Vector2i) -> EnemyState:
 	for enemy: EnemyState in _enemies:
-		if enemy.is_alive and enemy.grid_position == pos:
+		if enemy.is_alive and enemy.grid_position == p_pos:
+			return enemy
+	return null
+
+
+func get_enemy_by_id(p_id: int) -> EnemyState:
+	for enemy: EnemyState in _enemies:
+		if enemy.id == p_id:
 			return enemy
 	return null
 
@@ -47,14 +54,7 @@ func get_living_enemies() -> Array[EnemyState]:
 	return living
 
 
-## Advances the 1-second (24-frame) freeze counters on all entities by 1 frame
-func tick_all_freeze_timers() -> void:
-	_player.tick_frame()
-	for enemy: EnemyState in _enemies:
-		enemy.tick_frame()
-
-
-## Creates an isolated deep copy in microseconds
+## Creates an isolated deep copy in microseconds.
 func clone() -> CombatState:
 	var copy: CombatState = CombatState.new(_board.clone(), _player.clone())
 	for enemy: EnemyState in _enemies:
