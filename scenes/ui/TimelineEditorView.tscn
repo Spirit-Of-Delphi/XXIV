@@ -1,76 +1,37 @@
 [gd_scene format=3 uid="uid://mgu802yv605i"]
 
 [ext_resource type="Script" uid="uid://dobnivy6rmpn8" path="res://scripts/view/ui/TimelineEditorView.gd" id="1_mxxn7"]
-[ext_resource type="PackedScene" uid="uid://3tn3554kkehk" path="res://scenes/ui/TimelineCellView.tscn" id="2_ttkie"]
 
-[node name="TimelineEditorView" type="PanelContainer" unique_id=1588211798 node_paths=PackedStringArray("ruler_cells_row", "intent_cells_row", "motion_cells_row", "action_cells_row")]
+[node name="TimelineEditorView" type="Control" unique_id=1494579125]
+custom_minimum_size = Vector2(0, 178)
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mxxn7")
-cell_view_scene = ExtResource("2_ttkie")
-ruler_cells_row = NodePath("MarginContainer/MainVBox/HeaderRow")
-intent_cells_row = NodePath("MarginContainer/MainVBox/IntentRow")
-motion_cells_row = NodePath("MarginContainer/MainVBox/MotionRow")
-action_cells_row = NodePath("MarginContainer/MainVBox/ActionRow")
-
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1079919506]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="MainVBox" type="VBoxContainer" parent="MarginContainer" unique_id=242997709]
-layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="HeaderRow" type="HBoxContainer" parent="MarginContainer/MainVBox" unique_id=1873102931]
-layout_mode = 2
-
-[node name="RulerTitleLabel" type="Label" parent="MarginContainer/MainVBox/HeaderRow" unique_id=1645214108]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="RulerCellsRow" type="HBoxContainer" parent="MarginContainer/MainVBox/HeaderRow" unique_id=383539057]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 2
-
-[node name="IntentRow" type="HBoxContainer" parent="MarginContainer/MainVBox" unique_id=386300735]
-layout_mode = 2
-
-[node name="IntentTitleLabel" type="Label" parent="MarginContainer/MainVBox/IntentRow" unique_id=960424256]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="IntentCellsRow" type="HBoxContainer" parent="MarginContainer/MainVBox/IntentRow" unique_id=1187979914]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 2
-
-[node name="MotionRow" type="HBoxContainer" parent="MarginContainer/MainVBox" unique_id=1009220871]
-layout_mode = 2
-
-[node name="MotionTitleLabel" type="Label" parent="MarginContainer/MainVBox/MotionRow" unique_id=1966337554]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="MotionCellsRow" type="HBoxContainer" parent="MarginContainer/MainVBox/MotionRow" unique_id=1280583921]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 2
-
-[node name="ActionRow" type="HBoxContainer" parent="MarginContainer/MainVBox" unique_id=755671445]
-layout_mode = 2
-
-[node name="ActionTitleLabel" type="Label" parent="MarginContainer/MainVBox/ActionRow" unique_id=1641121283]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="ActionCellsRow" type="HBoxContainer" parent="MarginContainer/MainVBox/ActionRow" unique_id=305226917]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 2
+left_gutter_width = 84.0
+padding_x = 14.0
+padding_y = 12.0
+ruler_height = 24.0
+tier_row_height = null
+enemy_lane_base_height = null
+player_track_height = 44.0
+section_gap = 8.0
+well_bg_color = null
+cell_bg_color = null
+rule_color = null
+rule2_color = null
+stock_color = null
+soft_text_color = null
+mute_text_color = null
+ink_color = null
+vermilion_color = null
+danger_color = null
+gold_cut_color = null
+acetate_color = null
+motion_clip_color = null
+strike_clip_color = null
+tech_clip_color = null
+edit_clip_color = null

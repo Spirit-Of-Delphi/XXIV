@@ -4,43 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://qvqj3623b0mb" path="res://scenes/arena/TileView.tscn" id="2_rm0tn"]
 [ext_resource type="PackedScene" uid="uid://ds4guoq4ncjrl" path="res://scenes/arena/ActorView.tscn" id="3_jll4e"]
 
-[node name="ArenaView" type="Node2D" unique_id=1505204468 node_paths=PackedStringArray("tiles_container", "trajectory_line", "decoy_marker", "ghost_marker", "actors_container")]
+[node name="ArenaView" type="Node2D" unique_id=1505204468 node_paths=PackedStringArray("tiles_container", "actors_container")]
 script = ExtResource("1_3yljx")
 tile_view_scene = ExtResource("2_rm0tn")
 actor_view_scene = ExtResource("3_jll4e")
 tiles_container = NodePath("TilesContainer")
-trajectory_line = NodePath("TrajectoryLine")
-decoy_marker = NodePath("DecoyMarker")
-ghost_marker = NodePath("GhostMarker")
 actors_container = NodePath("ActorsContainer")
 
 [node name="TilesContainer" type="Node2D" parent="." unique_id=1442725239]
-
-[node name="TrajectoryLine" type="Line2D" parent="." unique_id=550117871]
-width = 4.0
-default_color = Color(0.5370987, 0.97633153, 0.8808251, 0.65000004)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="DecoyMarker" type="Node2D" parent="." unique_id=516334768]
-
-[node name="DecoyVisual" type="ColorRect" parent="DecoyMarker" unique_id=1680407558]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-mouse_filter = 2
-color = Color(0.827222, 0.62782896, 1, 0.45000002)
-
-[node name="GhostMarker" type="Node2D" parent="." unique_id=133906641]
-
-[node name="GhostVisual" type="ColorRect" parent="GhostMarker" unique_id=56481728]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-mouse_filter = 2
-color = Color(0.48677072, 0.89827347, 0.8077228, 0.35000002)
 
 [node name="ActorsContainer" type="Node2D" parent="." unique_id=227123929]

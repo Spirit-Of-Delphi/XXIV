@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://faf27n7ahvrr"]
 
 [ext_resource type="Script" uid="uid://hqcw7su54rdi" path="res://scripts/view/ui/CombatHudView.gd" id="1_jhpne"]
+[ext_resource type="Theme" uid="uid://c5nxaurowv70w" path="res://scenes/ui/XXIVTheme.tres" id="1_nmc8y"]
+[ext_resource type="Script" uid="uid://k3wxy1r1q1ks" path="res://scripts/view/ui/CommitButton.gd" id="3_36nqm"]
 
-[node name="CombatHudView" type="Control" unique_id=976056322 node_paths=PackedStringArray("take_label", "vitals_label", "speed_tier_label", "momentum_label", "warning_label", "piles_label", "clear_button", "commit_button", "end_banner_panel", "end_title_label", "restart_button")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h3kd2"]
+
+[node name="CombatHudView" type="Control" unique_id=976056322 node_paths=PackedStringArray("objective_label", "warning_label", "frame_title_label", "you_detail_label", "hostiles_detail_label", "undo_button", "redo_button", "clear_button", "piles_label", "commit_button", "end_banner_panel", "end_title_label", "restart_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,70 +14,138 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_nmc8y")
 script = ExtResource("1_jhpne")
-take_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/TakeLabel")
-vitals_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/VitalsLabel")
-speed_tier_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/SpeedTierLabel")
-momentum_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/MomentumLabel")
-warning_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/WarningLabel")
-piles_label = NodePath("TopBarPanel/MarginContainer/TopBarRow/PilesLabel")
-clear_button = NodePath("TopBarPanel/MarginContainer/TopBarRow/ClearButton")
-commit_button = NodePath("TopBarPanel/MarginContainer/TopBarRow/CommitButton")
+scene_number = null
+total_scenes = null
+objective_label = NodePath("ForecastPanel/ForecastMargin/ForecastVBox/TopMetaRow/ObjectiveLabel")
+warning_label = NodePath("ForecastPanel/ForecastMargin/ForecastVBox/TopMetaRow/WarningLabel")
+frame_title_label = NodePath("ForecastPanel/ForecastMargin/ForecastVBox/FrameTitleLabel")
+you_detail_label = NodePath("ForecastPanel/ForecastMargin/ForecastVBox/YouDetailLabel")
+hostiles_detail_label = NodePath("ForecastPanel/ForecastMargin/ForecastVBox/HostilesDetailLabel")
+undo_button = NodePath("FooterBar/UndoButton")
+redo_button = NodePath("FooterBar/RedoButton")
+clear_button = NodePath("FooterBar/ClearButton")
+piles_label = NodePath("FooterBar/PilesLabel")
+commit_button = NodePath("FooterBar/CommitButton")
 end_banner_panel = NodePath("EndBarPanel")
-end_title_label = NodePath("EndBarPanel/MarginContainer/EndVBox/EndTitleLabel")
-restart_button = NodePath("EndBarPanel/MarginContainer/EndVBox/RestartButton")
+end_title_label = NodePath("EndBarPanel/EndMargin/EndVBox/EndTitleLabel")
+restart_button = NodePath("EndBarPanel/EndMargin/EndVBox/RestartButton")
+rule_color = null
+stock_color = null
+soft_text_color = null
+mute_text_color = null
+ochre_hostile_color = null
+danger_color = null
+gold_color = null
+shield_blue_color = null
+victory_color = Color(0.28, 0.96, 0.72, 1)
 
-[node name="TopBarPanel" type="PanelContainer" parent="." unique_id=809159690]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-offset_left = 20.0
-offset_top = 10.0
-offset_right = -20.0
-offset_bottom = 58.0
-grow_horizontal = 2
+[node name="ForecastPanel" type="PanelContainer" parent="." unique_id=1691916285]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 70.0
+offset_right = 1900.0
+offset_bottom = 184.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h3kd2")
 
-[node name="MarginContainer" type="MarginContainer" parent="TopBarPanel" unique_id=1937967930]
+[node name="ForecastMargin" type="MarginContainer" parent="ForecastPanel" unique_id=460667104]
 layout_mode = 2
-theme_override_constants/margin_left = 14
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 14
-theme_override_constants/margin_bottom = 8
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 4
 
-[node name="TopBarRow" type="HBoxContainer" parent="TopBarPanel/MarginContainer" unique_id=1383848844]
+[node name="ForecastVBox" type="VBoxContainer" parent="ForecastPanel/ForecastMargin" unique_id=198227307]
 layout_mode = 2
-theme_override_constants/separation = 18
+mouse_filter = 2
+theme_override_constants/separation = 3
 
-[node name="TakeLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=1305325765]
+[node name="TopMetaRow" type="HBoxContainer" parent="ForecastPanel/ForecastMargin/ForecastVBox" unique_id=1933681703]
 layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
 
-[node name="VitalsLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=782390575]
+[node name="ObjectiveLabel" type="Label" parent="ForecastPanel/ForecastMargin/ForecastVBox/TopMetaRow" unique_id=21176101]
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "OBJECTIVE  Eliminate all hostiles"
 
-[node name="SpeedTierLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=1257074465]
-layout_mode = 2
-
-[node name="MomentumLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=1239793182]
-layout_mode = 2
-
-[node name="WarningLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=374085354]
+[node name="WarningLabel" type="Label" parent="ForecastPanel/ForecastMargin/ForecastVBox/TopMetaRow" unique_id=778809348]
 layout_mode = 2
 size_flags_horizontal = 3
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+text = "Forecast: pick a card [1–9] to build your second"
 
-[node name="PilesLabel" type="Label" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=410216352]
+[node name="FrameTitleLabel" type="Label" parent="ForecastPanel/ForecastMargin/ForecastVBox" unique_id=1634723655]
 layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "FRAME 00  •  PLANNING OVERVIEW"
 
-[node name="ClearButton" type="Button" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=908963787]
+[node name="YouDetailLabel" type="Label" parent="ForecastPanel/ForecastMargin/ForecastVBox" unique_id=243366433]
 layout_mode = 2
-text = "CLEAR"
+theme_override_font_sizes/font_size = 12
+text = "You: Idle at (2,4)"
+text_overrun_behavior = 3
 
-[node name="CommitButton" type="Button" parent="TopBarPanel/MarginContainer/TopBarRow" unique_id=2138021510]
+[node name="HostilesDetailLabel" type="Label" parent="ForecastPanel/ForecastMargin/ForecastVBox" unique_id=239771829]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Hostiles: Quiet"
+text_overrun_behavior = 3
+
+[node name="FooterBar" type="HBoxContainer" parent="." unique_id=696506884]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 1012.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="UndoButton" type="Button" parent="FooterBar" unique_id=1300382550]
+custom_minimum_size = Vector2(82, 42)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 14
+text = "Undo"
+
+[node name="RedoButton" type="Button" parent="FooterBar" unique_id=1395057024]
+custom_minimum_size = Vector2(82, 42)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 14
+text = "Redo"
+
+[node name="ClearButton" type="Button" parent="FooterBar" unique_id=612513080]
+custom_minimum_size = Vector2(82, 42)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 14
+text = "Clear"
+
+[node name="PilesLabel" type="Label" parent="FooterBar" unique_id=1864783137]
+modulate = Color(0.5803922, 0.6392157, 0.72156864, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "DRAW 10   •   DISC 0   •   EXH 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CommitButton" type="Button" parent="FooterBar" unique_id=1570676124]
+custom_minimum_size = Vector2(196, 44)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 15
 text = "COMMIT"
+script = ExtResource("3_36nqm")
 
 [node name="EndBarPanel" type="PanelContainer" parent="." unique_id=753287748]
-custom_minimum_size = Vector2(460, 140)
+visible = false
+custom_minimum_size = Vector2(480, 160)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -87,23 +159,29 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="EndBarPanel" unique_id=414381470]
+[node name="EndMargin" type="MarginContainer" parent="EndBarPanel" unique_id=414381470]
 layout_mode = 2
-theme_override_constants/margin_left = 20
+mouse_filter = 2
+theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 20
 
-[node name="EndVBox" type="VBoxContainer" parent="EndBarPanel/MarginContainer" unique_id=2042054995]
+[node name="EndVBox" type="VBoxContainer" parent="EndBarPanel/EndMargin" unique_id=2042054995]
 layout_mode = 2
-theme_override_constants/separation = 14
+mouse_filter = 2
+theme_override_constants/separation = 18
 alignment = 1
 
-[node name="EndTitleLabel" type="Label" parent="EndBarPanel/MarginContainer/EndVBox" unique_id=1755095665]
+[node name="EndTitleLabel" type="Label" parent="EndBarPanel/EndMargin/EndVBox" unique_id=1755095665]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
+text = "CUT! SCENE COMPLETE"
 horizontal_alignment = 1
 
-[node name="RestartButton" type="Button" parent="EndBarPanel/MarginContainer/EndVBox" unique_id=2122664053]
+[node name="RestartButton" type="Button" parent="EndBarPanel/EndMargin/EndVBox" unique_id=2122664053]
+custom_minimum_size = Vector2(220, 42)
 layout_mode = 2
-text = "NEW TAKE"
+size_flags_horizontal = 4
+focus_mode = 0
+text = "NEW TAKE (RESTART)"
