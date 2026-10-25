@@ -27,10 +27,10 @@ restart_button = NodePath("EndBarPanel/MarginContainer/EndVBox/RestartButton")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-offset_left = 24.0
-offset_top = 12.0
-offset_right = -24.0
-offset_bottom = 60.0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = 58.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TopBarPanel" unique_id=1937967930]

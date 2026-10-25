@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3ensvdmfqyl1"]
 
 [ext_resource type="Script" uid="uid://cfj16a5cija1p" path="res://scripts/view/CombatScreen.gd" id="1_o7myu"]
+[ext_resource type="Theme" uid="uid://c5nxaurowv70w" path="res://data/XXIVTheme.tres" id="2_mwsax"]
 [ext_resource type="PackedScene" uid="uid://cxnda1vdadvii" path="res://scenes/arena/ArenaView.tscn" id="2_o7myu"]
 [ext_resource type="Script" uid="uid://bmmj7f2n1ewx4" path="res://scripts/view/PlaybackController.gd" id="3_aldo0"]
 [ext_resource type="PackedScene" uid="uid://mgu802yv605i" path="res://scenes/ui/TimelineEditorView.tscn" id="4_mwsax"]
@@ -11,12 +12,53 @@
 script = ExtResource("1_o7myu")
 arena_view = NodePath("ArenaView")
 playback_controller = NodePath("PlaybackController")
-hud_view = NodePath("UILayer/CombatHudView")
-hand_view = NodePath("UILayer/HandView")
-timeline_view = NodePath("UILayer/TimelineEditorView")
+hud_view = NodePath("UILayer/ScreenRoot/CombatHudView")
+hand_view = NodePath("UILayer/ScreenRoot/RightConsole/HandView")
+timeline_view = NodePath("UILayer/ScreenRoot/RightConsole/TimelineEditorView")
+
+[node name="BackdropLayer" type="CanvasLayer" parent="." unique_id=880929467]
+layer = -1
+
+[node name="BackdropRoot" type="Control" parent="BackdropLayer" unique_id=1607338122]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_mwsax")
+
+[node name="ArenaFramePanel" type="Panel" parent="BackdropLayer/BackdropRoot" unique_id=61827935]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 70.0
+offset_right = 956.0
+offset_bottom = 1060.0
+mouse_filter = 2
+
+[node name="FrameGateLabel" type="Label" parent="BackdropLayer/BackdropRoot/ArenaFramePanel" unique_id=314202571]
+modulate = Color(0.39215687, 0.45490196, 0.54509807, 1)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 948.0
+offset_right = 256.0
+offset_bottom = 976.0
+text = "FRAME 00/24"
+
+[node name="FPSGateLabel" type="Label" parent="BackdropLayer/BackdropRoot/ArenaFramePanel" unique_id=2001689742]
+modulate = Color(0.39215687, 0.45490196, 0.54509807, 1)
+layout_mode = 0
+offset_left = 760.0
+offset_top = 948.0
+offset_right = 920.0
+offset_bottom = 976.0
+text = "24 FPS"
+horizontal_alignment = 2
 
 [node name="ArenaView" parent="." unique_id=1505204468 instance=ExtResource("2_o7myu")]
-position = Vector2(744, 100)
+position = Vector2(32, 82)
+tile_pitch = 152.0
 
 [node name="PlaybackController" type="Node" parent="." unique_id=394222774 node_paths=PackedStringArray("shake_target")]
 script = ExtResource("3_aldo0")
@@ -24,22 +66,30 @@ shake_target = NodePath("../ArenaView")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1021807713]
 
-[node name="TimelineEditorView" parent="UILayer" unique_id=1588211798 instance=ExtResource("4_mwsax")]
-anchors_preset = -1
-anchor_top = 1.0
-offset_left = 24.0
-offset_top = -195.0
-offset_right = -24.0
-offset_bottom = -16.0
-grow_vertical = 0
+[node name="ScreenRoot" type="Control" parent="UILayer" unique_id=801971929]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_mwsax")
 
-[node name="HandView" parent="UILayer" unique_id=1825059995 instance=ExtResource("5_aldo0")]
-anchors_preset = -1
-anchor_top = 1.0
-offset_left = 24.0
-offset_top = -395.0
-offset_right = -24.0
-offset_bottom = -205.0
-grow_vertical = 0
+[node name="RightConsole" type="VBoxContainer" parent="UILayer/ScreenRoot" unique_id=167740959]
+layout_mode = 1
+offset_left = 972.0
+offset_top = 70.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+theme_override_constants/separation = 14
 
-[node name="CombatHudView" parent="UILayer" unique_id=976056322 instance=ExtResource("6_h1vwu")]
+[node name="TimelineEditorView" parent="UILayer/ScreenRoot/RightConsole" unique_id=1588211798 instance=ExtResource("4_mwsax")]
+layout_mode = 2
+
+[node name="HandView" parent="UILayer/ScreenRoot/RightConsole" unique_id=1825059995 instance=ExtResource("5_aldo0")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CombatHudView" parent="UILayer/ScreenRoot" unique_id=976056322 instance=ExtResource("6_h1vwu")]
+layout_mode = 1
